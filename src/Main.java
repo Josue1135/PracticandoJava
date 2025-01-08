@@ -18,6 +18,8 @@ public class Main {
         System.out.println("8. Número mayor en un arreglo: ");
         System.out.println("9. Numero Perfecto");
         System.out.println("10. Ordenar Arreglo");
+        System.out.println("11. Numero A es Divisible por B");
+        System.out.println("12. Calcular interés mensual generado");
         System.out.print("Ingrese su opción (1 - 10): ");
         int opcion = sc.nextInt();
         switch (opcion) {
@@ -139,7 +141,32 @@ public class Main {
 
                 System.out.println("Arreglo ordenado de mayor a menor");
                 System.out.println(ordenarArreglo.imprimirArreglo());
+                break;
+            case 11:
+                System.out.println("A ES DIVISIBLE POR B");
+                System.out.print("Ingresa el numero A: ");
+                int numA = sc.nextInt();
+                System.out.print("Ingresa el numero B: ");
+                int numB = sc.nextInt();
+                EsDivisible esDivisible = new EsDivisible(numA, numB);
+                if(esDivisible.esDivisible()){
+                    System.out.println("El numero A = " + numA + " es DIVISIBLE por B = " + numB );
+                }else{
+                    System.out.println("El numero A = " + numA + " NO ES DIVISIBLE por B = " + numB);
+                }
+                break;
+            case 12:
+                System.out.println("INTERÉS MENSUAL GENERADO");
+                System.out.print("Ingrese el capital inicial a abonar:");
+                double capital = sc.nextDouble();
+                //double tasaInteres = sc.nextDouble();
+                //int interMensual = sc.nextInt();
+                InteresMensual interesMensual = new InteresMensual(capital);
+                double interesGanado = interesMensual.calcularInteresGanado();
+                System.out.println("El interés generado a fin de mes es = " +interesGanado);
+                break;
         }
+
 
     sc.close();
 
